@@ -1,17 +1,31 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="I will be deleted soon"/>
+  <div id="app" v-if="status === 'Ready'">
+    <Header :title="title"/>
+    <MoviesList />
+  </div>
+  <div v-else-if="status === 'Loading'">
+    Loading
+  </div>
+  <div v-else>
+    Error
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Header from "./components/Header.vue";
+import MoviesList from "./components/MoviesList.vue";
 
 export default {
   name: "app",
+  data() {
+    return {
+      title: "Vue Movie DB",
+      status: "Ready"
+    };
+  },
   components: {
-    HelloWorld
+    MoviesList,
+    Header
   }
 };
 </script>
