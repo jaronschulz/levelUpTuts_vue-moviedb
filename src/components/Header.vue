@@ -1,6 +1,10 @@
 <template>
   <header>
-    <h1><router-link to="/"> {{title }}</router-link></h1>
+    <h1>
+      <router-link to="/">
+      <img src="../assets/logo.svg" alt="Logo">
+      </router-link>
+      </h1>
   </header>
 </template>
 
