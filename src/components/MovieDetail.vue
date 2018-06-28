@@ -1,4 +1,5 @@
 <template>
+<transition name="fade">
   <div class="movie-wrapper" :style="styles">
     <div class="movie-info">
       <h1>{{ movie.title}}</h1>
@@ -8,6 +9,7 @@
       </p>
     </div>
   </div>
+  </transition>
 </template>
 
 <script>
@@ -57,5 +59,15 @@ export default {
   background: white;
   color: #222;
   padding: 2rem 10%;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
 }
 </style>
