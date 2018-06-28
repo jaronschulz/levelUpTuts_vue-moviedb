@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>{{ title }}</h1>
+    <h1><router-link to="/"> {{title }}</router-link></h1>
   </header>
 </template>
 

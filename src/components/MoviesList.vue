@@ -22,7 +22,7 @@ export default {
     fetchData: async function() {
       try {
         const res = await fetch(
-          "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc/&api_key=46becdf3251e17ce10c5fd25bf8352d2"
+          "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=46becdf3251e17ce10c5fd25bf8352d2"
         );
         const movies = await res.json();
         this.movies = movies.results;
